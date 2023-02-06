@@ -5,21 +5,28 @@ document.addEventListener('keydown', e => {
     if(!audio) {
         return;
     }
-    console.log(e.key, e.keyCode);
+    let button = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    button.classList.add('zoom');
     audio.currentTime = 0;
     audio.play();
 })
 
 let buttons = Array.from(document.querySelectorAll(`div[data-key]`));
-console.log(buttons);
+
 buttons.forEach(button => button.addEventListener('click', e => {
     if(e.target.dataset.key) {
         let audio = document.querySelector(`audio[data-key="${e.target.dataset.key}"]`);
         if(!audio) {
             return;
         }
-        console.log(e.target.dataset.key);
+        let tag = document.querySelector(`div[data-key="${e.target.dataset.key}"]`);
+        tag.classList.add('zoom');
+        console.log(e.target.dataset.key, 'is pressed');
         audio.currentTime = 0;
         audio.play();
     }
+}))
+
+buttons.forEach(button => button.addEventListener('transitionend', e => {
+    e.target.classList.remove('zoom');
 }))
