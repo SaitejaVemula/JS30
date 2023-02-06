@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+body, main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+div {
+    background: red;
+    color: black;
+    padding: 20px;
+    margin: 20px;
+    width: 200px;
+}
+
+.instrument_name {
+    font-size: 40px;
+}
