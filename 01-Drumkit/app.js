@@ -20,6 +20,7 @@ buttons.forEach(button => button.addEventListener('click', e => {
             return;
         }
         let tag = document.querySelector(`div[data-key="${e.target.dataset.key}"]`);
+        tag.classList.remove('zoom');
         tag.classList.add('zoom');
         console.log(e.target.dataset.key, 'is pressed');
         audio.currentTime = 0;
